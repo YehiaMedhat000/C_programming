@@ -1,3 +1,4 @@
+/* Guard directives */
 #ifndef PROBLEM1_H
 #define PROBLEM1_H
 
@@ -7,6 +8,7 @@
 /* Macro for defining PI with limited precision */
 #define PI 3.141592653589
 
+/* Prototypes */
 /* Square Circumference */
 double square_circ(double a);
 /* Rectangle Circumference */
@@ -14,4 +16,5 @@ double rec_circ(double a, double b);
 /* Circle Circumference */
 double circle_circ(double R);
 
+/* End for the #ifndef directive*/
 #endif

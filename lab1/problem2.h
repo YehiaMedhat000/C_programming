@@ -1,3 +1,4 @@
+/* Guard directives */
 #ifndef PROBLEM_2
 #define PROBLEM_2
 
@@ -8,4 +9,5 @@
 double CtoK(double temp);
 double CtoF(double temp);
 
+/* End for the #ifndef directive*/
 #endif

@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	/* Using unsigned long long for most extreme cases */
 	unsigned long long int num;
 
-	/* Check for number of passed arguments */
+	/* Check if any arguments are passed */
 	if (argc < 2)
 	{
 		printf("ERROR: Invalid number of arguments\n");

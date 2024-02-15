@@ -25,6 +25,7 @@ int main()
 
 	/* For square */
 	printf("Enter the side length of the square: ");
+	/* Using scanf to get input from the user*/
 	scanf("%lf", &square_side);
 	printf("The square circumference: %lf\n", square_circ(square_side));
 
