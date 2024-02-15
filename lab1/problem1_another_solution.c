@@ -1,4 +1,4 @@
-#include "main.h"
+#include "problem1.h"
 
 /* Important
  * Assuming you're using command line gcc
