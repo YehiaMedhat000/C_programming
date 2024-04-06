@@ -15,7 +15,7 @@ int main()
 	printf("%s\n", *b + 1);
 	printf("%s\n", *(b + 1));
 	printf("%s\n", *(b + 2) + 1);
-	printf("%s\n", b[0][1]);
+	printf("%c\n", b[0][1]);
 
 	char *pt = *(b + 2) + 2;
 	*(pt--) = '0';
