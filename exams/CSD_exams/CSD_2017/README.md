@@ -4,7 +4,7 @@
 Dr. Nagia M. Ghanem
 
 
-### Question 1 ⌨️
+### [Question 1](./Q1.c) ⌨️
 ---
 Write a program that outputs the Nth term of the Fibonacci series:\
 $F_1 = 1, F_2 = 2$, and $F_n = F_{n-1} + F_{n-2}$ for $n > 2.$
@@ -23,7 +23,7 @@ Output: 21
 ```
 
 
-### Question 2 ⌨️
+### [Question 2](./Q2.c) ⌨️
 Given an integer x and base b, draw a flowchart and write a program to convert x
 to an equivalent base-b number. Hint: b takes values from 2 to 9 only.
 
@@ -40,7 +40,7 @@ Input: x = 13
 Output: 15
 ```
 
-### Question 3 ⌨️
+### [Question 3](./Q3.c) ⌨️
 Given two sorted arrays, draw a flowchart and write a program that
 merges the two array into one sorted array.
 Your program should read the size and elements of each input array.
