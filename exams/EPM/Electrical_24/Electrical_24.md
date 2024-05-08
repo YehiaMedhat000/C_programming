@@ -285,47 +285,141 @@ void fn(int **k)
 }
 ```
 
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
-* Q1
+* Q18: 120
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i;
+    int sum = 1;
+
+    /* This is a typical factorial program */
+    for (i = 1; i <= 5; i++)
+    {
+        sum = sum * i;
+    }
+    printf("%d", sum);
+    return 0;
+}
+```
+
+* Q19: break
+
+```
+which keyword is used to come out of a loop only for that iteration?
+```
+
+* Q20: Infinite loop
+
+```c
+#include <stdio.h>
+
+int reverse(int);
+
+int main()
+{
+    int no = 5;
+
+    reverse(no);
+    return 0;
+}
+
+int reverse(int no)
+{
+    if (no == 0)
+        return 0;
+    else
+        printf("%d,", no);
+    /* 
+     * The decrement takes place 
+     * After the execution of this line
+     * Because it's post decrement 
+     * Therefore, the no value will always be 5
+     * and will never be 0
+     */
+    reverse(no--);
+}
+```
+
+* Q21: 13
+
+```c
+#include <stdio.h>
+
+#define X 5+4
+
+int main()
+{
+    int x = 2;
+
+    /* 
+     * The preprocessor will rewrite this line as follows
+     * printf("%d", 5+4*2); 😅 completly different, isn't?
+     * Macros aren't calculated until they're called
+     */
+    printf("%d", X*x);
+    return 0;
+}
+```
+
+* Q[22, 28]: answer the 7 questions, solutions are in comments
+
+```c
+/* Iterative C program to reverse an array */
+#include <stdio.h>
+
+
+/* Function to reverse arr[] from start to end */
+void reverseArray(int arr[], int start, int end)
+{
+    int temp;
+
+    while (start <= end)
+    {
+        /* The main steps of any swap */
+        temp = arr[start]; /* (d) */
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++; /* (e) */
+        end -=1; /* (f) */
+    }
+}
+
+/* Utility that prints out an array on a line */
+void printArray(int arr[], int size)
+{
+    int i;
+
+    for (i = 0; i < size; i++) /* (g) */
+        printf("%d ", arr[i]);
+    printf("\n");
+}
+
+/* Driver function to test the above functions */
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    /* Get array size */
+    int n = sizeof(arr) / sizeof(int); /* (a) */
+
+    /* Call the reverse function */
+    reverseArray(arr, 0, n - 1); /* (b) */
+
+    /* Call the print function */
+    printArray(&arr[0], n); /* (c) */
+    return 0;
+}
+```
+
+* Q23
+* Q24
+* Q25
+* Q26
+* Q27
+* Q28
+* Q29
+* Q30
+* Q31
+* Q32
