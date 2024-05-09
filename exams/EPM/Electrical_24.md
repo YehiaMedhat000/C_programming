@@ -9,7 +9,7 @@ Using codeblocks Version (20.03)
 
 Dr: Mohammad Al-Habrook
 
-## Mistakes and/of typos
+## Mistakes and/of typos?
 
 Please send me the question that has a mistake and its correction
 on my email <avhmedmvmedhat000@gmail.com>
@@ -413,13 +413,243 @@ int main()
 }
 ```
 
-* Q23
-* Q24
-* Q25
-* Q26
-* Q27
-* Q28
-* Q29
-* Q30
-* Q31
-* Q32
+* Q29: -121
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    /* 
+     * signed means using the last bit
+     * Then the ranges are [-128, 127]
+     * which correspond to 
+     * 1000 0000 = - (2^7) = -128
+     * 0111 1111 = 127
+     */
+    signed char c = 125; /* 125 = 0111 1101 */
+    
+    c = c + 10; 
+    /* 0111 1101 
+     * 0000 1010
+     * _________
+     0 1000 0111 = -121
+     */
+
+    printf("%d", c); /* Prints -121 */
+    return 0;
+}
+```
+
+* Q30: Truncating the fractional part
+
+```
+Integer division results in Truncating the fractional part
+```
+
+* Q31: Base address of the array
+
+```
+In C if you pass an array as an argument to a function, what actually gets passed?
+```
+
+* Q32: The program may crash if some important data gets overwritten
+
+```
+What will happen in a C program you assign a value to an array element whose subscript exceeds the size of array?
+```
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int non_sized[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int sized[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    /* These lines have no problem with the compiler!!
+     * I couldn't cause the program to crash changing
+     * The indices, pretty awkward, isn't?
+     */
+    non_sized[10] = 5;
+    sized[10] = 5;
+    return 0;
+}
+```
+
+* Q33: The keyword used to transfer control from a function back to the calling function is `return`
+* Q34: Compiler time error
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    /* 
+     * Nevertheless that the following 2 lines are awkward
+     * but they caused no problems in execution nor compilation
+     */
+    int *p = (int *) 2;
+    int *q = (int *) 3;
+
+    /* The compile time error was caused here!! */
+    printf("%d", p+q);
+}
+```
+
+* Q35: -32768 to 32767
+
+```
+What is the 16-bit compiler allowable range for integer constants?
+```
+
+```
+Using number system principals:
+
+  0111 1111 1111 1111
+  sum is equal to: 32767
+
+  1000 0000 0000 0000
+  ^
+ -2^15 = -32768
+
+last bit is a sign bit
+```
+
+You can also check the limits online
+
+Or from the `<limits.h>` in the `/usr/include/limits.h`
+you'll find the following lines
+
+```bash
+/* Minimum and maximum values a `signed short int' can hold.  */
+#  define SHRT_MIN	(-32768)
+#  define SHRT_MAX	32767
+
+```
+Note that we are talking about 16-bit integers
+which correspond to short type
+
+* Q36: Using the following C code, value of x will be 0
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    int x, y = 2, z, a;
+
+    if (x = y % 4)
+        z = 2;
+
+    a = 2;
+
+    printf("%d %d", x, z, a);
+    return 0;
+}
+```
+
+* Q37: value of z will be Garbage value
+* Q38: value of a will be 2
+* Q39: Which of the following isn't a valid identifier?
+
+```
+Covid_19 ✅     Covid19 ✅      19covid ❌      _19covid ✅
+```
+
+* Q40: Two variables, i and j are pointers to integers, then `scanf("%i%i", i, j);` is a correct statement
+
+```c
+scanf("%i%i", i, j);   ✅      scanf("%d%d", &i, &j); ❌
+scanf("%i%i", &i, &j); ✅      scanf("%d%d", *i, *j); ❌
+```
+
+* Q41: Two variables, i and j are pointers to integers, then `printf("i = %d, j = %d\n", *i, *j);` is a correct statement
+
+```c
+printf("i = %d, j = %d\n", &i, &j); ❌
+printf("i = %d, j = %d\n", *i, *j); ✅
+printf("i = %d, j = %d\n", i, j);   ❌
+scanf("%d%d", i, j);                ✅  but looks like a typo
+```
+
+* Q42: Which of the following statements inputs five integer values and stores them in a previously declared array, A?
+
+```c
+for (int i = 1; i <= 5; i++) ❌
+    scanf("%d", A + i);
+
+for (int i = 1; i <= 5; i++) ✅
+    scanf("%d", A + i - 1);
+
+for (int i = 1; i <= 5; i++) ❌
+    scanf("%d", &A[i]);
+
+    /* a and b */ ❌
+```
+
+* Q43: Which of the following statements inputs five integer values and stores them in a previously declared array, A?
+
+```c
+/****** a *********/
+int i = 0;
+
+do {
+    scanf("%d", A + i);
+    ++i;
+} while (i < 5);
+
+/****** b *********/
+int i = 0;
+
+do {
+    scanf("%d", &A[i]);
+    ++i;
+} while (i < 5);
+
+/****** c *********/
+int i = 0;
+
+do {
+    scanf("%d", &A[i]);
+    ++i;
+} while (i < 5);
+
+/* (a) or (b) */ ✅
+```
+
+* Q44: Which of the following segments of code
+(which have two values of type float (x and y)) is/are used to print the maximum value?
+
+```c
+/****** 1 *********/
+MAX = x > y;
+
+switch (MAX)
+{
+    case 0: printf("%f", x); break;
+    case 1: printf("%f", y); break;
+}
+
+/****** b *********/
+if (x > y)
+    printf("%f", x);
+else
+    printf("%f", y);
+
+/****** c *********/
+x > y? printf("%f", x): printf("%f", y);
+
+/* (b) or (c) */
+```
+
+* Q45: The correct function call for a function named "Add",
+which has three input parameters each of type pointer to double
+(Variables x, y, and z are each of type of pointer to double) and does not return any value, is ............
+
+```c
+void add((double*) x, (double*) y, (double*) z);    ✅
+void add(double* x, double* y, double* z);  ❌
+void add(&x, &y, &z);   ❌
+void add(*x, *y, *z);   ❌
+```
