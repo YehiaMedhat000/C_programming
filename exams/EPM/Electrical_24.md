@@ -35,10 +35,12 @@ int main()
     return 0;
 }
 ```
+___
+* Q2-5
+___
+* Q6: What will the output of the <span style="color:red">**program**</span>?
 
-* [Q2-5](./Q1)
-* Q6: 35
-
+<span style="color:red">**Ans: Compiler error**</span>
 ```c
 int fun(int x, int y)
 {
@@ -53,7 +55,7 @@ int main()
 	return 0;
 }
 ```
-
+___
 * Q7: Compiler error
 
 ```c
@@ -75,10 +77,12 @@ int main()
     return 0;
 }
 ```
+___
+* Q8: What will the output of the <span style="color:red">**program**</span>?
 
-* Q8: 100 200
-
+<span style="color:red">**Ans: F (compiler error)**</span>
 ```c
+/* No includes are here*/
 int fun(int* arr)
 
 int main(void)
@@ -97,10 +101,12 @@ int fun(int* arr)
     printf("%d", *arr);
 }
 ```
+___
+* Q9: What will be the output of the following **program**?
 
-* Q9: 20 30 50 60
-
+<span style="color:red">**Ans: F (compiler error)**</span>
 ```c
+/* No includes here */
 int main()
 {
     int arr2d[][3] = {10, 20, 30, 40, 50, 60};
@@ -112,7 +118,7 @@ int main()
     return 0;
 }
 ```
-
+___
 * Q10: -2, 3, 1, 1
 
 ```c
@@ -127,7 +133,7 @@ int main()
     return 0;
 }
 ```
-
+___
 * Q11: 10
 
 ```c
@@ -153,7 +159,7 @@ int main()
     return 0;
 }
 ```
-
+___
 * Q12: Compiler Error
 
 ```c
@@ -165,7 +171,7 @@ int main()
 
     if (x == 2)
         ;
-    {x = 0;} // Compiler error
+    {x = 0;} /* Compiler error */
     if (x == 5)
     {
         x++;
@@ -175,11 +181,7 @@ int main()
     printf("x = %d", x);
 }
 ```
-``` 
-Note that when removing the erroneous line,
-the program worked without return statement
-```
-
+___
 * Q13: 37.0
 
 ```c
@@ -193,8 +195,10 @@ int main()
     return 0;
 }
 ```
+___
+* Q14: What will be the output of the following **piece of code**?
 
-* Q14: 8, 10
+<span style="color:red">**Ans: 8, 10**</span>
 
 ```c
 #include <stdio.h>
@@ -214,10 +218,12 @@ int main()
 	return 0;
 }
 ```
+___
+* Q15: What will the output of the <span style="color:red">**program**</span>?
 
-* Q15: 200
-
+<span style="color:red">**Ans: Compiler error**</span>
 ```c
+/* No includes here */
 void test(int *pr)
 {
     int x = 100;
@@ -242,7 +248,7 @@ int main()
 	return 0;
 }
 ```
-
+___
 * Q16: Add a statement to the function `fn` such that address of `a` gets stored in `j`
 
 ```c
@@ -263,29 +269,24 @@ void fn(int **k)
     *k = &a;
 }
 ```
+___
+* Q17: What will be the output of the <span style="color:red">**program**</span>?
 
-* Q17:
-
+<span style="color:red">**Ans: F (compiler error)**</span>
 ```c
-void fn(int**);
-
+/* No includes are here */
 int main()
 {
-    int *j;
-    fn(&j);
+    int arr[] = {1, 2, 3, 4, 5};
+    int *p = arr;
+    ++*p;
+    p += 2;
+    printf("%d", sum);
     return 0;
 }
-
-void fn(int **k)
-{
-    int a = 10;
-
-    /* Add a statement here */
-    *k = &a;
-}
 ```
-
-* Q18: 120
+___
+* Q18: 6
 
 ```c
 #include <stdio.h>
@@ -296,23 +297,19 @@ int main()
     int sum = 1;
 
     /* This is a typical factorial program */
-    for (i = 1; i <= 5; i++)
-    {
-        sum = sum * i;
-    }
+    for (i = 1; i <= 5; i++); /* Notice semicolon here */
+    {sum = sum * i;}
     printf("%d", sum);
     return 0;
 }
 ```
-
-* Q19: break
-
-```
-which keyword is used to come out of a loop only for that iteration?
-```
-
+___
+* Q19: which keyword is used to come out of a loop only for that iteration?
+**Ans: break**
+___
 * Q20: Infinite loop
 
+<span style="color:red">**Note: From I'd rather say it's infinite recursion**</span>
 ```c
 #include <stdio.h>
 
@@ -342,7 +339,7 @@ int reverse(int no)
     reverse(no--);
 }
 ```
-
+___
 * Q21: 13
 
 ```c
@@ -363,8 +360,8 @@ int main()
     return 0;
 }
 ```
-
-* Q[22, 28]: answer the 7 questions, solutions are in comments
+___
+* Q[22, 28]: answer the 7 questions, <span style="color:red">**solutions are in comments**</span>
 
 ```c
 /* Iterative C program to reverse an array */
@@ -412,7 +409,7 @@ int main()
     return 0;
 }
 ```
-
+___
 * Q29: -121
 
 ```c
@@ -440,26 +437,22 @@ int main()
     return 0;
 }
 ```
+___
+* Q30: Integer division results in Truncating the fractional part
 
-* Q30: Truncating the fractional part
+**Ans: Truncating the fractional part**
+___
+* Q31: In C if you pass an array as an argument to a function, what actually gets passed?
 
-```
-Integer division results in Truncating the fractional part
-```
+**Ans: Base address of the array**
+___
+* Q32: What will happen in a C program you assign a value to an array element whose subscript exceeds the size of array?
 
-* Q31: Base address of the array
-
-```
-In C if you pass an array as an argument to a function, what actually gets passed?
-```
-
-* Q32: The program may crash if some important data gets overwritten
-
-```
-What will happen in a C program you assign a value to an array element whose subscript exceeds the size of array?
-```
-
+**Ans: The program may crash if some important data gets overwritten**
 ```c
+/* This code is for my curiosity to see
+ * What's gonna happen for this specific question
+ */
 #include <stdio.h>
 
 int main()
@@ -476,8 +469,9 @@ int main()
     return 0;
 }
 ```
-
+___
 * Q33: The keyword used to transfer control from a function back to the calling function is `return`
+___
 * Q34: Compiler time error
 
 ```c
@@ -496,12 +490,10 @@ int main()
     printf("%d", p+q);
 }
 ```
+___
+* Q35: What is the 16-bit compiler allowable range for integer constants?
 
-* Q35: -32768 to 32767
-
-```
-What is the 16-bit compiler allowable range for integer constants?
-```
+**Ans: -32768 to 32767**
 
 ```
 Using number system principals:
@@ -529,7 +521,7 @@ you'll find the following lines
 ```
 Note that we are talking about 16-bit integers
 which correspond to short type
-
+___
 * Q36: Using the following C code, value of x will be 0
 
 ```c
@@ -548,22 +540,21 @@ int main()
     return 0;
 }
 ```
-
-* Q37: value of z will be Garbage value
-* Q38: value of a will be 2
+* Q37: value of z will be **Garbage value**
+* Q38: value of a will be **2**
+___
 * Q39: Which of the following isn't a valid identifier?
 
 ```
 Covid_19 ✅     Covid19 ✅      19covid ❌      _19covid ✅
 ```
-
+___
 * Q40: Two variables, i and j are pointers to integers, then `scanf("%i%i", i, j);` is a correct statement
-
 ```c
 scanf("%i%i", i, j);   ✅      scanf("%d%d", &i, &j); ❌
 scanf("%i%i", &i, &j); ✅      scanf("%d%d", *i, *j); ❌
 ```
-
+___
 * Q41: Two variables, i and j are pointers to integers, then `printf("i = %d, j = %d\n", *i, *j);` is a correct statement
 
 ```c
@@ -572,24 +563,26 @@ printf("i = %d, j = %d\n", *i, *j); ✅
 printf("i = %d, j = %d\n", i, j);   ❌
 scanf("%d%d", i, j);                ✅  but looks like a typo
 ```
-
+___
 * Q42: Which of the following statements inputs five integer values and stores them in a previously declared array, A?
 
+<span style="color:red">**Note that the length of the array isn't specified, so, all of them should work flawlessly if size of the array isn't strictly 5 elements.**</span>
 ```c
-for (int i = 1; i <= 5; i++) ❌
+for (int i = 1; i <= 5; i++) ✅
     scanf("%d", A + i);
 
-for (int i = 1; i <= 5; i++) ✅
+for (int i = 1; i <= 5; i++) ✅✅
     scanf("%d", A + i - 1);
 
-for (int i = 1; i <= 5; i++) ❌
+for (int i = 1; i <= 5; i++) ✅
     scanf("%d", &A[i]);
 
-    /* a and b */ ❌
+    /* a and b */
 ```
-
+___
 * Q43: Which of the following statements inputs five integer values and stores them in a previously declared array, A?
 
+<span style="color:red">**Note that the length of the array isn't specified, so, all of them should work flawlessly if size of the array isn't strictly 5 elements.**</span>
 ```c
 /****** a *********/
 int i = 0;
@@ -617,7 +610,7 @@ do {
 
 /* (a) or (b) */ ✅
 ```
-
+___
 * Q44: Which of the following segments of code
 (which have two values of type float (x and y)) is/are used to print the maximum value?
 
@@ -640,15 +633,15 @@ else
 /****** c *********/
 x > y? printf("%f", x): printf("%f", y);
 
-/* (b) or (c) */
+/* (b) or (c) */ ✅
 ```
-
+___
 * Q45: The correct function call for a function named "Add",
 which has three input parameters each of type pointer to double
 (Variables x, y, and z are each of type of pointer to double) and does not return any value, is ............
 
 ```c
-void add((double*) x, (double*) y, (double*) z);    ✅
+void add((double*) x, (double*) y, (double*) z);    ❌
 void add(double* x, double* y, double* z);  ❌
 void add(&x, &y, &z);   ❌
 void add(*x, *y, *z);   ❌
