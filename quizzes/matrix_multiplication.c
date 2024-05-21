@@ -1,10 +1,16 @@
 #include <stdio.h>
 
+int **_def_matrix(const size_t size);
 void get_matrix(int matrix[3][3]);
 void print_matrix(int matrix[3][3]);
 void multiply_matrix(int matrix1[3][3], int matrix2[3][3], int ret[3][3]);
 
-int main()
+/**
+ * main - Entry point
+ * Return: (0) always
+ */
+
+int main(int ac, char **av)
 {
 	int matrix[3][3];
 	int ret[3][3];
