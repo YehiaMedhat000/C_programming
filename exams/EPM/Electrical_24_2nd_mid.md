@@ -1,3 +1,248 @@
+### 1. What is the output of the following program?
+```c
+#include<stdio.h>
+
+int main()
+{
+        int x=10;
+        int y=5;
+        int result=1;
+
+        while (y>0) { result*=x;y--; }
+
+        printf("%d\n", result);
+        return 0;
+}
+```
+a. 1000\
+b. 10000\
+c. 100000 ✅\
+d. 1000000
+---
+**The following function implements Fibonacci series algorithm, which is 2, 3, 5, 8, 13, 21,....., answer the following FOUR questions.**
+```c
+#include<stdio.h>
+
+void Fibonacci (int m)
+{
+        static int m1=0,m2=1,m3=0;
+
+        /* 0 */
+        if (m > 0)
+        {
+                m1 = m2; /* 1 */
+                m2 = m3; /* 2 */
+                m3 = m1 + m2; /* 3 */
+                printf("%d", m3);
+                Fibonacci(m - 1); /* 4 */
+        }
+}
+
+/* Function to test output */
+int main()
+{
+    /* Play with the number as you like */
+    Fibonacci(10);
+    return 0;
+}
+```
+---
+### 2. Complete number (4) by one of the following:
+
+a. `return Fibonacci(m - 1);`\
+b. `Fibonacci(m-1);` ✅\
+c. `return Fibonacci(m3 - 1);`\
+d. `Fibonacci(m3 - 1);`
+---
+### 3. Complete number (1) by one of the following:
+
+a. `m3 = m1 + m2;`\
+b. `m1 = m2;` ✅\
+c. `m2 = m3;`\
+d. `m = m - 1;`
+---
+### 4. Complete number (3) by one of the following:
+
+a. `m3 = m1 + m2;`\
+b. `m1 = m2;`\
+c. `m2 = m3;` ✅\
+d. `m = m - 1;`
+---
+### 5. Complete number (0) by one of the following:
+
+a. `m == 0`\
+b. `m3 == 0`\
+c. `m > 0` ✅\
+d. `m3 > 0`
+---
+### 6. What is the output of the program?
+```c
+/* No #include */
+int fun (int x, int y)
+{
+        if (x==0) return y;
+        return fun (x-2, x+y);
+}
+int main()
+{
+        printf("%d", fun (8, 6));
+        return 0;
+}
+```
+a. 33\
+b. 26\
+c. 29\
+d. compile error ✅
+---
+### 7. What is the output of the program if the user inputs 5?
+```c
+#include<stdio.h>
+
+int main()
+{
+        int x=1,i,n;
+
+        printf ("Enter a number");
+        scanf("%d", &n);
+
+        for (i = 1 ; i <= n ; i++) { x=x*i; }
+        printf("%d",x);
+
+        return 0;
+}
+```
+a. compiler error\
+b. 720\
+c. 240\
+d. 24\
+f. ✅
+---
+### 8. What will be the output of the program?
+```c
+#include <stdio.h>
+
+void modifyArray(int* arr);
+
+int main(void)
+{
+    int arr[3] = {10, 20, 30};
+    modifyArray(arr);
+    printf("%d", arr[1]);
+    return 0;
+}
+
+void modifyArray(int* arr)
+{
+    arr[1] = arr[1] + 10;
+    printf("%d ", arr[2]);
+}
+```
+a. 30 20\
+b. 30 30 ✅\
+c. 40 20\
+d. 40 30
+---
+### 9. What will be the output of the program?
+```c
+#include <stdio.h>
+
+int main()
+{
+    int arr2d[][3] = {1, 2, 3, 4, 5, 6};
+    int (*ptr)[3] = arr2d;
+    printf("%d %d ", ptr[0][0], ptr[1][0]);
+    ++ptr;
+    printf("%d %d\n", ptr[0][1], ptr[0][2]);
+    return 0;
+}
+```
+a. 1 4 5 6 ✅\
+b. 1 4 2 3\
+c. 2 5 5 6\
+d. 1 5 6 4
+---
+###  10. What will be the output of the program?
+```c
+#include <stdio.h>
+
+int main()
+{
+    int a=-1, b=1, c=0, result;
+    result = (++a || ++b) || (++c);
+    printf("%d, %d, %d, %d\n", a, b, c, result);
+    return 0;
+}
+```
+a. 0, 2, 1, 1\
+b. -3, 2, 0, 1\
+c. 2, 3, 0, 1\
+d. 0, 2, 0, 1 ✅
+---
+### 11. What will be the output of the program?
+```c
+#include <stdio.h>
+
+int main()
+{
+    int i=0;
+    for(i=0; i<10; i++) {
+        switch(i) {
+            case 0: i+=3;
+            case 1: i+=2;
+            case 5: i+=3;
+            default: i+=2;
+            break;
+        }
+        printf("%d ", i); /* Prints 10 */
+    }
+    return 0;
+}
+```
+A. 12 14 16 18 20 22\
+B. 8 10 12 14 16 18\
+C. 10 12 14 16\
+D. compiler error\
+F. ✅
+---
+### 12. What will be the output of the program?
+```c
+#include <stdio.h>
+
+int main()
+{
+    int x=7;
+
+    if(x<10) {x=0;}
+
+    if(x>=0) {x++;}
+    else x+=3;
+
+    printf("x = %d", x);
+    return 0;
+}
+```
+A. 5\
+B. 6\
+C. 1 ✅\
+D. compiler error
+---
+### 13. What will be the output of the program?
+```c
+#include <stdio.h>
+
+int main()
+{
+    float c=5.0;
+
+    printf("Temperature in Fahrenheit is %.2f", (9/5.0)*c + 32);
+    return 0;
+}
+```
+A. Temperature in Fahrenheit is 41.00 ✅\
+B. Temperature in Fahrenheit is 37.00\
+C. Temperature in Fahrenheit is 0.00\
+D. Compiler Error
+---
 ### 14. What will be the output of the program?
 ```c
 #include <stdio.h>
@@ -53,17 +298,21 @@ int main()
     p = &big;
     q = &small;
 
-    /* 3 */
+    /***** 3 *****/
     printf("enter %d numbers", N); // ask the user to enter N numbers
+
     for (int i = 0; i < N; i++)
-        /* 4 */
-	    scanf("%d", b+i);
+        /***** 4 *****/
+        scanf("%d", b+i);
+
     max_min(b + 1, N - 1, &big, &small);
 
-    printf("%d\n", *&small);
-    printf("%d\n", *p);
+    /***** 5 *****/
+    z = fun2(p, q);
 
-    /* These following lines make Segfaults error */
+    printf("16: %d\n", *&small);
+    printf("17: %d\n", *p);
+
     printf("%d\n", *z);
     printf("%d\n", *w);
     printf("%d\n", &*w);
@@ -78,7 +327,8 @@ void max_min(int a[], int n, int *max, int *min)
     *min = *max = *a;
     /* or it can be: *max = *min = a[0] */
 
-    for (int i = 1; i < n - 1; i++) {
+    for (int i = 1; i < n - 1; i++)
+    {
         if (a[i] < *min)
             *min = a[i];
 	else if (a[i] > *max)
@@ -124,6 +374,7 @@ c. `printf("enter numbers", N);`\
 d. `printf("enter %d numbers ", N);` ✅
 ---
 ### 20. In (4), to take the value from the user you should write...
+
 a. `scanf("%d",&(b+i));`\
 b. `scanf("%d", (b+i));` ✅\
 c. `scanf("%d",&b);`\
@@ -138,19 +389,23 @@ c. `*z = fun(p, q);`\
 d. `z = fun(*p, *q)`\
 f. ✅
 ---
-22. If the user filled the array with 5 4 3 2 1, the output of line 16 would be......\
+
+### 22. If the user filled the array with 5 4 3 2 1, the output of line 16 would be......
+
 a. 5\
 b. 4\
 C. 2 ✅\
 d. 1
 ---
-23. If the user filled thearray with 5 4 3 2 1, the output of line 17 would be.....\
+### 23. If the user filled thearray with 5 4 3 2 1, the output of line 17 would be.....
+
 a. 5\
 b. 4 ✅\
 c. 2\
 d. 1
 ---
-24. In (6), initialize the pointers (min and max) by the first value of the array (a).\
+### 24. In (6), initialize the pointers (min and max) by the first value of the array (a).
+
 a. `*max=*min=*a;`\
 b. `*max=*min=a[0];`\
 c. `(a) and (b)` ✅\
@@ -272,7 +527,6 @@ a. `A1[index] = num--;`\
 b. `--num, A1[index] = num;`\
 c. `A1[index] = --num;` ✅\
 d. `(b) or (c)`
-
 ---
 ### 33. In (9), the following code snippet must be written to iterate through the array, decrement num by 2, and assign its value to the next element.
 
@@ -348,3 +602,4 @@ b. 24\
 c. 22\
 d. (b) or (c)\
 f. ✅
+---
