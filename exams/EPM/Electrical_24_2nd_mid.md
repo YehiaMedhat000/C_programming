@@ -598,8 +598,19 @@ void main() {
 }
 ```
 a. 21\
-b. 24\
+b. 24 ✅ (in case of no error)\
 c. 22\
 d. (b) or (c)\
 f. ✅
+
+```
+For simplification 1 byte will be written as "b"
+Memory format when using struct student
+int no: bbbb 
+char name[20]: bbbb bbbb bbbb bbbb bbbb
+
+therefore, the struct is as following in the memory:
+bbbb bbbb bbbb bbbb bbbb bbbb
+```
+For more info watch this [video](https://www.youtube.com/watch?v=aROgtACPjjg&list=PLBlnK6fEyqRiteqwlMLXYtZ16xXDR7MO0&index=9)
 ---
