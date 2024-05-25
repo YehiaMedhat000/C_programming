@@ -566,11 +566,10 @@ d. `(a) or (c)`
 ---
 ### 38. In (11), ........... is the correct statement.
 
-a. `if (value%2!=0) return 1; else return 0;`\
+a. `if (value%2!=0) return 1; else return 0;` ✅\
 b. `if (value%2=0) return -1; else return 1;`\
 c. `if (value/2=1) return 0; else return 1;`\
-d. `(a) or (c)`\
-f. ✅
+d. `(a) or (c)`
 ---
 ### 39. Given that max = 8. After the execution of the program, ........... is displayed.
 ** Well this one is creepy, because there will be tabs as white spaces between each number and the next, the question is: are they put in account?**
