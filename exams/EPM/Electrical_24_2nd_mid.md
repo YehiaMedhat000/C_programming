@@ -509,8 +509,8 @@ d. `(b) or (c)` ✅
 ---
 ### 30. In (5), ........... is a correct statement for declaring a pointer to an integer.
 
-a. `int A1` ✅\
-b. `int *A1`\
+a. `int A1`\
+b. `int *A1` ✅\
 c. `int **A1`\
 d. `int []`
 ---
