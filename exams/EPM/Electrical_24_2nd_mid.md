@@ -540,14 +540,14 @@ d. `++index; A1[index] = num--;`
 a. `index < length`\
 b. `index <= length`\
 c. `num > 1` ✅\
-d. `num > 0`
+d. `num > 0` ✅
 ---
 ### 35. In (10), ........... is the correct statement.
 
 a. `void IsOdd(int *value)`\
-b. `int IsOdd(int value);` ✅\
+b. `int IsOdd(int value);`\
 c. `void IsOdd(int value)`\
-d. `int IsOdd(int value)`
+d. `int IsOdd(int value)` ✅
 ---
 ### 36. In (10), ........... is the correct statement.
 
