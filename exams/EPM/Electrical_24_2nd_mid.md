@@ -539,8 +539,9 @@ d. `++index; A1[index] = num--;`
 
 a. `index < length`\
 b. `index <= length`\
-c. `num > 1` ✅\
-d. `num > 0` ✅
+c. `num > 1`\
+d. `num > 0`\
+e. ✅
 ---
 ### 35. In (10), ........... is the correct statement.
 
