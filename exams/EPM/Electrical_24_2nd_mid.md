@@ -63,9 +63,9 @@ d. `m = m - 1;`
 ---
 ### 4. Complete number (3) by one of the following:
 
-a. `m3 = m1 + m2;`\
+a. `m3 = m1 + m2;` ✅\
 b. `m1 = m2;`\
-c. `m2 = m3;` ✅\
+c. `m2 = m3;`\
 d. `m = m - 1;`
 ---
 ### 5. Complete number (0) by one of the following:
