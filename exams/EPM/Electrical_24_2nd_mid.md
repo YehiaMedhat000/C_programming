@@ -525,8 +525,8 @@ d. `int index;`
 
 a. `A1[index] = num--;`\
 b. `--num, A1[index] = num;`\
-c. `A1[index] = --num;` ✅\
-d. `(b) or (c)`
+c. `A1[index] = --num;`\
+d. `(b) or (c)` ✅
 ---
 ### 33. In (9), the following code snippet must be written to iterate through the array, decrement num by 2, and assign its value to the next element.
 
